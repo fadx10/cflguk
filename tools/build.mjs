@@ -112,6 +112,7 @@ for (const { meta, body, from } of pages) {
     css,
     schema: schema.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join("\n  "),
     headerClass: meta.headerClass || "",
+    designSwitcher: fill(part("design-switcher"), Object.fromEntries(["Editorial", "Counsel", "Corporate", "Modern Grid", "Typographic", "Two Paths", "Spotlight"].map((name, i) => ["current_" + (i + 1), (meta.design || (meta.path === "/" ? 1 : 0)) === i + 1 ? ' aria-current="page"' : ""]))),
     bodyClass: meta.bodyClass || "",
     scripts,
     review: meta.review ? fill(part("review"), Object.fromEntries([1, 2, 3, 4, 5, 6, 7].map((i) => ["cur" + i, meta.design === i ? ' aria-current="page"' : ""]))) : "",
@@ -126,6 +127,7 @@ for (const { meta, body, from } of pages) {
     part("sprite"),
     meta.noChrome ? "" : fill(part("header"), vars),
     content,
+    vars.designSwitcher,
     meta.noChrome ? `${vars.review}\n<script src="/assets/js/site.js" defer></script>\n</body>\n</html>\n` : fill(part("footer"), vars),
   ].join("\n");
 
