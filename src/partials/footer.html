@@ -1,0 +1,107 @@
+<footer class="site-footer on-dark">
+  <div class="container container--wide">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="wordmark wordmark--light"><span class="wordmark__name">Confidère</span><span class="wordmark__sub">Legal</span></span>
+        <p>Clear, practical legal advice for individuals, families and businesses, on the law of England and Wales.</p>
+        <a class="btn btn--sm" href="/book-consultation/">Book a consultation</a>
+      </div>
+      <nav class="footer-col" aria-labelledby="f-ind">
+        <h2 id="f-ind">For individuals</h2>
+        <ul role="list">
+          <li><a href="/services/family-law/">Family Law</a></li>
+          <li><a href="/services/immigration/">Immigration</a></li>
+          <li><a href="/services/criminal-defence/">Criminal Defence</a></li>
+          <li><a href="/services/licensing-regulatory/">Licensing and Regulatory</a></li>
+          <li><a href="/services/property-housing/">Property and Housing</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-labelledby="f-biz">
+        <h2 id="f-biz">For businesses</h2>
+        <ul role="list">
+          <li><a href="/services/technology-data-ai-governance/">Technology, Data and AI Governance</a></li>
+          <li><a href="/products/confidere-app/">Confidère app</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-labelledby="f-firm">
+        <h2 id="f-firm">The firm</h2>
+        <ul role="list">
+          <li><a href="/about/">About us</a></li>
+          <li><a href="/team/">Our team</a></li>
+          <li><a href="/fees/">Fees and pricing</a></li>
+          <li><a href="/fees/cost-calculator/">Cost calculator</a></li>
+          <li><a href="/insights/">Insights</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <h2>Get in touch</h2>
+        <ul role="list">
+          <li><a href="/book-consultation/">Book a consultation</a></li>
+          <li><a href="/contact/">Contact us</a></li>
+          <li>{{addressHtml}}</li>
+          <li>Phone · {{phoneHtml}}</li>
+          <li>Email · {{emailHtml}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-reg">
+      <div>
+        <p>Confidère Legal is the trading name of <span class="tbc">[legal entity name]</span>, a company registered in England and Wales (company number <span class="tbc">[to confirm]</span>), registered office <span class="tbc">[to confirm]</span>. <span class="tbc">[SRA regulatory statement and SRA number — added once authorisation is granted]</span> VAT number <span class="tbc">[to confirm]</span>.</p>
+        <p>Our <a href="/legal/complaints/">complaints procedure</a> explains how to raise a concern. If you are not satisfied with our response, you may be able to complain to the <a href="https://www.legalombudsman.org.uk/" rel="noopener" target="_blank">Legal Ombudsman<span class="sr-only"> (opens in a new tab)</span></a>. Professional indemnity insurance: <span class="tbc">[insurer and territorial coverage]</span>.</p>
+        <p>We advise on the law of England and Wales.</p>
+      </div>
+      <div class="sra-badge-slot" role="note">
+        <strong>SRA digital badge</strong>
+        <span>Embed code is issued by the SRA once authorisation is granted</span>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <ul role="list">
+        <li><a href="/legal/">Legal and regulatory information</a></li>
+        <li><a href="/legal/fees-transparency/">Fees and service transparency</a></li>
+        <li><a href="/legal/complaints/">Complaints</a></li>
+        <li><a href="/legal/privacy-notice/">Privacy notice</a></li>
+        <li><a href="/legal/cookie-policy/">Cookie policy</a></li>
+        <li><a href="/legal/terms-of-use/">Terms of use</a></li>
+        <li><a href="/legal/terms-of-business/">Terms of business</a></li>
+        <li><a href="/legal/accessibility/">Accessibility</a></li>
+        <li><button type="button" data-consent-action="manage">Cookie settings</button></li>
+      </ul>
+      <p>&copy; <span data-year>{{year}}</span> Confidère Legal</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="region" aria-label="Cookie consent" hidden>
+  <h2>Your privacy choices</h2>
+  <p>We use strictly necessary cookies to run this website. With your permission we would also use analytics cookies, and show embedded video from YouTube, which may set its own cookies. Non-essential cookies stay off unless you accept them. <a href="/legal/cookie-policy/">Cookie policy</a></p>
+  <div class="btn-row">
+    <button class="btn btn--navy" type="button" data-consent-action="accept">Accept all</button>
+    <button class="btn btn--outline" type="button" data-consent-action="reject">Reject non-essential</button>
+    <button class="btn btn--outline" type="button" data-consent-action="manage">Manage</button>
+  </div>
+</div>
+
+<dialog class="cookie-dialog" id="cookie-dialog" aria-labelledby="cookie-dialog-title">
+  <form class="cookie-dialog__body" method="dialog">
+    <h2 id="cookie-dialog-title">Cookie settings</h2>
+    <p>Choose which cookies we may use. You can change this at any time from the footer.</p>
+    <div class="consent-row"><div><strong>Strictly necessary</strong>Needed for the site to work, such as remembering these choices. Always on.</div><label class="switch"><input type="checkbox" checked disabled aria-label="Strictly necessary cookies (always on)"><span></span></label></div>
+    <div class="consent-row"><div><strong>Analytics</strong>Help us understand which pages are useful. Off unless you turn it on.</div><label class="switch"><input type="checkbox" name="analytics" aria-label="Analytics cookies"><span></span></label></div>
+    <div class="consent-row"><div><strong>Embedded media</strong>Video hosted on YouTube, which may set its own cookies. Off unless you turn it on.</div><label class="switch"><input type="checkbox" name="media" aria-label="Embedded media cookies"><span></span></label></div>
+    <div class="consent-row"><div><strong>Marketing</strong>Not currently used. Shown so you can control it if it is introduced.</div><label class="switch"><input type="checkbox" name="marketing" aria-label="Marketing cookies"><span></span></label></div>
+    <div class="btn-row">
+      <button class="btn btn--outline" type="button" data-consent-action="close">Cancel</button>
+      <button class="btn btn--navy" type="button" data-consent-action="save">Save choices</button>
+    </div>
+  </form>
+</dialog>
+
+{{review}}
+
+<script src="/assets/js/site.js" defer></script>
+{{scripts}}
+</body>
+</html>

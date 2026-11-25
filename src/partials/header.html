@@ -1,0 +1,100 @@
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header {{headerClass}}">
+  <div class="container container--wide site-header__bar">
+    <a class="site-header__brand" href="/" aria-label="Confidère Legal — home">
+      <span class="wordmark"><span class="wordmark__name">Confidère</span><span class="wordmark__sub">Legal</span></span>
+    </a>
+    <nav class="primary-nav" aria-label="Main">
+      <ul class="primary-nav__list">
+        <li>
+          <button class="primary-nav__link" type="button" aria-expanded="false" aria-controls="mega-services" data-mega-trigger{{cur_services}}>
+            Services <svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg>
+          </button>
+        </li>
+        <li><a class="primary-nav__link" href="/products/confidere-app/"{{cur_products}}>Products</a></li>
+        <li><a class="primary-nav__link" href="/fees/"{{cur_fees}}>Fees</a></li>
+        <li><a class="primary-nav__link" href="/about/"{{cur_about}}>About</a></li>
+        <li><a class="primary-nav__link" href="/team/"{{cur_team}}>Our Team</a></li>
+        <li><a class="primary-nav__link" href="/insights/"{{cur_insights}}>Insights</a></li>
+        <li><a class="primary-nav__link" href="/contact/"{{cur_contact}}>Contact</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <!-- Telephone number appears here once confirmed by the client -->
+      <a class="btn btn--sm" href="/book-consultation/">Book a consultation</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="drawer" data-drawer-open>
+        <span class="sr-only">Open menu</span><span class="menu-toggle__lines" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mega" id="mega-services">
+    <div class="container container--wide mega__inner">
+      <div class="mega__intro">
+        <span class="eyebrow eyebrow--rule">Services</span>
+        <p class="h3">How we can help</p>
+        <p>Practical advice on the law of England and Wales for individuals, families and businesses.</p>
+        <a class="link-arrow" href="/services/">All services <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div>
+        <p class="mega__group-title">For individuals and families</p>
+        <ul class="mega__list">
+          <li><a class="mega__link" href="/services/family-law/"><strong>Family Law <svg aria-hidden="true"><use href="#i-arrow"/></svg></strong><span>Divorce, finances, children and protection</span></a></li>
+          <li><a class="mega__link" href="/services/immigration/"><strong>Immigration <svg aria-hidden="true"><use href="#i-arrow"/></svg></strong><span>Visas, sponsor licences, settlement and appeals</span></a></li>
+          <li><a class="mega__link" href="/services/criminal-defence/"><strong>Criminal Defence <svg aria-hidden="true"><use href="#i-arrow"/></svg></strong><span>Police station through to trial</span></a></li>
+          <li><a class="mega__link" href="/services/licensing-regulatory/"><strong>Licensing and Regulatory <svg aria-hidden="true"><use href="#i-arrow"/></svg></strong><span>Premises, taxi and private hire, hearings</span></a></li>
+          <li><a class="mega__link" href="/services/property-housing/"><strong>Property and Housing <svg aria-hidden="true"><use href="#i-arrow"/></svg></strong><span>Tribunal appeals, landlord and tenant</span></a></li>
+        </ul>
+      </div>
+      <div class="mega__biz">
+        <p class="mega__group-title">For businesses</p>
+        <a class="mega__link" href="/services/technology-data-ai-governance/" style="border:0;padding-top:0"><strong>Technology, Data and AI Governance <svg aria-hidden="true"><use href="#i-arrow"/></svg></strong></a>
+        <ul>
+          <li>Fractional Data Protection Officer</li>
+          <li>Data protection and privacy</li>
+          <li>AI governance and compliance</li>
+          <li>Cyber assurance and technology contracts</li>
+        </ul>
+        <a class="btn btn--navy btn--sm" href="/services/technology-data-ai-governance/">Explore business services</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" hidden>
+  <div class="drawer__scrim" data-drawer-close></div>
+  <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="drawer__head">
+      <a href="/" aria-label="Confidère Legal — home"><span class="wordmark"><span class="wordmark__name">Confidère</span><span class="wordmark__sub">Legal</span></span></a>
+      <button class="drawer__close" type="button" data-drawer-close><span class="sr-only">Close menu</span><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+    <nav class="drawer__nav" aria-label="Mobile">
+      <ul class="drawer__list" role="list">
+        <li class="drawer__item">
+          <button class="drawer__acc" type="button" aria-expanded="false" aria-controls="drawer-services">Services <svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+          <div class="drawer__sub" id="drawer-services" hidden>
+            <p class="drawer__sub-title">For individuals and families</p>
+            <a href="/services/family-law/">Family Law</a>
+            <a href="/services/immigration/">Immigration</a>
+            <a href="/services/criminal-defence/">Criminal Defence</a>
+            <a href="/services/licensing-regulatory/">Licensing and Regulatory</a>
+            <a href="/services/property-housing/">Property and Housing</a>
+            <p class="drawer__sub-title">For businesses</p>
+            <a href="/services/technology-data-ai-governance/">Technology, Data and AI Governance</a>
+            <a href="/services/">All services</a>
+          </div>
+        </li>
+        <li class="drawer__item"><a class="drawer__link" href="/products/confidere-app/">Products</a></li>
+        <li class="drawer__item"><a class="drawer__link" href="/fees/">Fees and pricing</a></li>
+        <li class="drawer__item"><a class="drawer__link" href="/about/">About</a></li>
+        <li class="drawer__item"><a class="drawer__link" href="/team/">Our Team</a></li>
+        <li class="drawer__item"><a class="drawer__link" href="/insights/">Insights</a></li>
+        <li class="drawer__item"><a class="drawer__link" href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="drawer__foot">
+      <a class="btn" href="/book-consultation/">Book a consultation</a>
+      <p>Phone, video or in-person appointments</p>
+    </div>
+  </div>
+</div>
