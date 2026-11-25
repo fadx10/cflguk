@@ -1,0 +1,3 @@
+# Pre-launch review build: crawling disabled. Set indexable: true in src/config.mjs at launch.
+User-agent: *
+Disallow: /

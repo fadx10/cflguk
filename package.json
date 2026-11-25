@@ -1,0 +1,15 @@
+{
+  "name": "confidere-legal-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Confidère Legal website: static HTML, CSS and JavaScript with a dependency-free Node build.",
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "serve": "node tools/serve.mjs 4400",
+    "start": "node tools/build.mjs && node tools/serve.mjs 4400"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,102 @@
+/* Design 6 — Two Paths
+   The hero splits into the two audiences; each panel is a doorway. */
+
+.d6-hero { padding-top: clamp(2.5rem, 1rem + 4vw, 5rem); }
+.d6-hero__head { display: grid; justify-items: center; text-align: center; }
+.d6-hero__title { margin-top: var(--s-5); max-width: 20ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.5rem, 1.4rem + 4vw, 5.25rem); line-height: 1.04; letter-spacing: -.025em; color: var(--navy); }
+.d6-hero__lead { margin-top: var(--s-5); max-width: 62ch; font-size: var(--fs-md); }
+
+.d6-paths { display: flex; gap: 12px; margin-top: clamp(2.5rem, 1.5rem + 3vw, 4.5rem); padding-inline: 12px; min-height: clamp(520px, 62vh, 680px); }
+.d6-path { position: relative; flex: 1 1 0; overflow: hidden; display: flex; align-items: flex-end; background: var(--navy); color: rgba(255,255,255,.8); transition: flex-grow .7s var(--ease); }
+.d6-path__bg { position: absolute; inset: 0; }
+.d6-path__bg img { transition: transform 1.4s var(--ease); }
+.d6-path__bg::after { content: ""; position: absolute; inset: 0; transition: opacity .6s var(--ease); }
+.d6-path--ind .d6-path__bg::after { background: linear-gradient(180deg, rgba(21,29,49,.25) 0%, rgba(21,29,49,.92) 70%); }
+.d6-path--biz .d6-path__bg::after { background: linear-gradient(180deg, rgba(21,29,49,.45) 0%, rgba(21,29,49,.96) 70%); }
+.d6-path__body { position: relative; z-index: 1; width: 100%; max-width: 560px; padding: clamp(1.75rem, 1rem + 3vw, 3.5rem); }
+.d6-path__k { font-size: var(--fs-xs); font-weight: 600; letter-spacing: var(--track-eyebrow); text-transform: uppercase; color: var(--gold-300); }
+.d6-path__t { margin-top: var(--s-3); font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.625rem); line-height: 1.12; color: #fff; }
+.d6-path__links { margin: var(--s-5) 0 var(--s-6); border-top: 1px solid rgba(255,255,255,.16); }
+.d6-path__links a { display: flex; justify-content: space-between; align-items: center; min-height: 46px; border-bottom: 1px solid rgba(255,255,255,.16); font-size: .9875rem; color: #fff; transition: padding var(--dur) var(--ease), color var(--dur) var(--ease); }
+.d6-path__links a svg { width: 14px; height: 14px; color: var(--mint-300); }
+.d6-path__links a:hover { padding-left: 8px; color: var(--mint-300); }
+@media (hover: hover) and (min-width: 1024px) {
+  .d6-paths:hover .d6-path { flex-grow: .8; }
+  .d6-paths .d6-path:hover, .d6-paths .d6-path:focus-within { flex-grow: 1.25; }
+  .d6-path:hover .d6-path__bg img { transform: scale(1.05); }
+}
+
+.d6-trust { margin-top: 12px; background: var(--navy-900); }
+.d6-trust ul { display: grid; grid-template-columns: repeat(4, 1fr); }
+.d6-trust li { padding: var(--s-5) var(--s-5) var(--s-5) 0; font-size: var(--fs-sm); color: rgba(255,255,255,.6); }
+.d6-trust li + li { padding-left: var(--s-5); border-left: 1px solid rgba(255,255,255,.1); }
+.d6-trust span { display: block; font-family: var(--serif); font-size: 1.125rem; color: #fff; }
+
+.d6-how { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2rem, 1rem + 5vw, 7rem); align-items: center; }
+.d6-how__media { aspect-ratio: 4 / 5; }
+.d6-steps { margin-top: var(--s-6); border-top: 1px solid var(--navy); }
+.d6-steps li { display: grid; grid-template-columns: 64px 1fr; gap: var(--s-4); padding: var(--s-5) 0; border-bottom: 1px solid var(--line); }
+.d6-steps span { font-family: var(--serif); font-size: 1.5rem; color: var(--gold); line-height: 1.2; }
+.d6-steps h3 { font-size: 1.375rem; }
+.d6-steps p { margin-top: 4px; font-size: .9375rem; }
+
+.d6-team { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-5); }
+.d6-person { display: grid; grid-template-columns: 160px 1fr; gap: var(--s-6); align-items: center; padding: var(--s-5); background: #fff; border: 1px solid var(--line); transition: border-color var(--dur) var(--ease); }
+.d6-person:hover { border-color: var(--navy); }
+.d6-person .portrait-ph__initials { font-size: 2.5rem; }
+.d6-person > div:last-child { display: grid; gap: 4px; }
+.d6-person__role { font-size: var(--fs-xs); font-weight: 600; letter-spacing: var(--track-eyebrow); text-transform: uppercase; color: var(--mint-700); }
+.d6-person__name { font-family: var(--serif); font-size: 1.75rem; color: var(--navy); }
+.d6-person__meta { font-size: var(--fs-sm); color: var(--muted); }
+.d6-person .link-arrow { margin-top: var(--s-3); }
+
+.d6-app { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: var(--s-6) clamp(2rem, 1rem + 5vw, 6rem); padding: clamp(2rem, 1rem + 4vw, 4.5rem); border: 1px solid var(--line); border-left: 3px solid var(--mint); }
+.d6-app__tag { display: inline-block; padding: 5px 10px; border: 1px solid var(--gold); color: #7A5F0E; font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+.d6-app .h2 { margin-top: var(--s-4); }
+.d6-app .lead { margin-top: var(--s-3); }
+.d6-app .btn-row { margin-top: var(--s-6); align-items: center; gap: var(--s-5); }
+.d6-app__list { counter-reset: app; align-self: center; }
+.d6-app__list li { counter-increment: app; display: grid; grid-template-columns: 40px 1fr; padding: var(--s-3) 0; border-bottom: 1px solid var(--line); font-family: var(--serif); font-size: 1.1875rem; color: var(--navy); }
+.d6-app__list li::before { content: counter(app, decimal-leading-zero); font-family: var(--sans); font-size: 12px; color: var(--gold); padding-top: 6px; }
+.d6-app__disc { grid-column: 1 / -1; padding-top: var(--s-4); border-top: 1px solid var(--line); }
+
+.d6-insights { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-5); }
+.d6-insights article { display: grid; gap: var(--s-3); align-content: start; min-height: 200px; padding: var(--s-6); background: #fff; border-top: 2px solid var(--navy); }
+.d6-insights h3 { font-style: italic; color: var(--slate); }
+
+.d6-cta { display: grid; grid-template-columns: 1fr 1fr; }
+.d6-cta__tile { position: relative; display: grid; gap: var(--s-3); align-content: end; min-height: 360px; padding: clamp(2rem, 1rem + 4vw, 4.5rem); color: rgba(255,255,255,.78); overflow: hidden; }
+.d6-cta__tile--book { background: var(--navy); }
+.d6-cta__tile--calc { background: var(--navy-900); }
+.d6-cta__t { font-family: var(--serif); font-size: clamp(2rem, 1.4rem + 2.4vw, 3.5rem); line-height: 1.05; color: #fff; letter-spacing: -.02em; }
+.d6-cta__go { position: absolute; top: clamp(2rem, 1rem + 4vw, 4.5rem); right: clamp(2rem, 1rem + 4vw, 4.5rem); display: grid; place-items: center; width: 64px; height: 64px; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; color: #fff; transition: all var(--dur) var(--ease); }
+.d6-cta__go svg { width: 20px; height: 20px; }
+.d6-cta__tile:hover .d6-cta__go { background: var(--mint); border-color: var(--mint); transform: rotate(-45deg); }
+.d6-cta__tile::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--mint); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease); }
+.d6-cta__tile--calc::after { background: var(--gold); }
+.d6-cta__tile:hover::after { transform: scaleX(1); }
+
+@media (max-width: 1023px) {
+  .d6-paths { flex-direction: column; min-height: 0; }
+  .d6-path { flex: none; min-height: 520px; }
+  .d6-trust ul { grid-template-columns: 1fr 1fr; }
+  .d6-trust li:nth-child(3) { padding-left: 0; border-left: 0; }
+  .d6-trust li:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.1); }
+  .d6-how, .d6-app { grid-template-columns: 1fr; }
+  .d6-how__media { aspect-ratio: 16 / 9; }
+  .d6-team { grid-template-columns: 1fr; }
+}
+@media (max-width: 767px) {
+  .d6-hero__head { justify-items: start; text-align: left; }
+  .d6-paths { padding-inline: 0; gap: 0; }
+  .d6-path { min-height: 0; }
+  .d6-path__body { padding-top: 12rem; }
+  .d6-trust ul { grid-template-columns: 1fr; }
+  .d6-trust li, .d6-trust li + li { padding: var(--s-4) 0; border-left: 0; }
+  .d6-trust li + li { border-top: 1px solid rgba(255,255,255,.1); }
+  .d6-person { grid-template-columns: 96px 1fr; gap: var(--s-4); }
+  .d6-insights, .d6-cta { grid-template-columns: 1fr; }
+  .d6-cta__tile { min-height: 260px; }
+  .d6-cta__go { width: 52px; height: 52px; }
+  .btn-row .btn { flex: 1 1 100%; }
+}

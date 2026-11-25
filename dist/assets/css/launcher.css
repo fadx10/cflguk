@@ -1,0 +1,17 @@
+/* Design launcher (review only): just the design-name buttons */
+.launcher { background: var(--navy-900); color: #fff; }
+.ln { min-height: 100svh; display: grid; place-items: center; padding: var(--s-8) var(--gutter); background:
+  radial-gradient(ellipse at 50% 0%, rgba(36,154,118,.14), transparent 60%),
+  radial-gradient(ellipse at 50% 100%, rgba(201,162,39,.08), transparent 55%), var(--navy-900); }
+.ln__inner { width: 100%; max-width: 520px; display: grid; justify-items: center; text-align: center; }
+.ln__title { margin-top: var(--s-7); font-family: var(--serif); font-weight: 300; font-size: clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem); color: #fff; letter-spacing: -.02em; }
+.ln__title::after { content: ""; display: block; width: 48px; height: 1px; margin: var(--s-5) auto 0; background: var(--gold); }
+.ln__list { width: 100%; display: grid; gap: 10px; margin-top: var(--s-7); }
+.ln__btn { display: grid; grid-template-columns: 40px 1fr 20px; align-items: center; gap: var(--s-4); min-height: 64px; padding: 0 var(--s-5); border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.03); text-align: left; transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease); }
+.ln__btn:hover { background: var(--mint); border-color: var(--mint); }
+.ln__btn:focus-visible { outline-color: var(--gold-300); }
+.ln__n { font-family: var(--serif); font-size: 1.125rem; color: var(--gold-300); }
+.ln__btn:hover .ln__n { color: #fff; }
+.ln__t { font-family: var(--serif); font-size: 1.375rem; color: #fff; }
+.ln__btn svg { width: 16px; height: 16px; color: rgba(255,255,255,.6); transition: transform var(--dur) var(--ease), color var(--dur) var(--ease); }
+.ln__btn:hover svg { transform: translateX(4px); color: #fff; }

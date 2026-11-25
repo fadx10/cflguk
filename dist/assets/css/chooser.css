@@ -1,0 +1,23 @@
+/* Design chooser (review only) */
+.chooser { background: var(--off); }
+.ch-head { padding-block: clamp(3rem, 2rem + 4vw, 6rem) var(--s-8); }
+.ch-title { margin-top: var(--s-7); }
+.ch-head .lead { margin-top: var(--s-5); max-width: 68ch; }
+.ch-key { display: flex; flex-wrap: wrap; gap: var(--s-3) var(--s-6); margin-top: var(--s-6); padding-top: var(--s-5); border-top: 1px solid var(--line-strong); font-size: var(--fs-sm); }
+.ch-key li { position: relative; padding-left: 18px; }
+.ch-key li::before { content: ""; position: absolute; left: 0; top: .7em; width: 8px; height: 1px; background: var(--gold); }
+.ch-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-7) var(--s-6); padding-bottom: var(--s-9); }
+.ch-card { display: grid; gap: var(--s-2); align-content: start; }
+.ch-card--lead { grid-column: 1 / -1; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); column-gap: var(--s-7); }
+.ch-card--lead .ch-card__img { grid-row: 1 / span 5; }
+.ch-card--lead .ch-card__n { align-self: end; }
+.ch-card__img { display: block; aspect-ratio: 16 / 10; overflow: hidden; background: #fff; border: 1px solid var(--line-strong); margin-bottom: var(--s-4); box-shadow: 0 30px 60px -40px rgba(21,29,49,.45); }
+.ch-card--lead .ch-card__img { margin-bottom: 0; }
+.ch-card__img img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 1.2s var(--ease); }
+.ch-card:hover .ch-card__img img { transform: scale(1.02); }
+.ch-card__n { font-size: var(--fs-xs); font-weight: 600; letter-spacing: var(--track-eyebrow); text-transform: uppercase; color: var(--mint-700); }
+.ch-card__t { font-family: var(--serif); font-size: clamp(1.75rem, 1.4rem + 1vw, 2.5rem); color: var(--navy); line-height: 1.1; }
+.ch-card__d { max-width: 56ch; font-size: .9875rem; }
+.ch-foot { padding-block: var(--s-6); border-top: 1px solid var(--line-strong); font-size: var(--fs-sm); color: var(--muted); }
+@media (max-width: 1023px) { .ch-card--lead { grid-template-columns: 1fr; } .ch-card--lead .ch-card__img { grid-row: auto; margin-bottom: var(--s-4); } }
+@media (max-width: 767px) { .ch-grid { grid-template-columns: 1fr; } }

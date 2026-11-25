@@ -1,0 +1,190 @@
+{
+  "_readme": "Single source of truth for published fees. Used by the Fees page (at build time) and the Cost Calculator (in the browser). Amounts are GBP excluding VAT. null = not yet confirmed (shown as 'To be confirmed'). confirmed:false = proposed by the client but not yet approved for publication (shown with a 'Proposed' tag). Third-party fees are never subject to VAT here and are set by the relevant body. Replace this file with a CMS-managed source when the admin system is chosen.",
+  "currency": "GBP",
+  "vatRate": 0.2,
+  "lastReviewed": null,
+  "areas": [
+    {
+      "id": "immigration",
+      "name": "Immigration",
+      "page": "/services/immigration/",
+      "services": [
+        {
+          "id": "spouse-partner-visa",
+          "name": "Spouse or partner visa",
+          "summary": "Preparing and submitting a spouse or partner application.",
+          "fee": { "type": "fixed", "amount": null },
+          "confirmed": false,
+          "questions": [
+            { "id": "applicants", "type": "count", "label": "How many people are applying, including the main applicant?", "min": 1, "max": 8, "default": 1, "included": 1, "feeEach": null, "feeLabel": "Additional applicants" },
+            { "id": "location", "type": "select", "label": "Where is the main applicant applying from?", "options": [ { "value": "in-uk", "label": "Inside the UK" }, { "value": "outside-uk", "label": "Outside the UK" } ] }
+          ],
+          "thirdParty": [
+            { "label": "Home Office application fee and Immigration Health Surcharge", "amount": null, "per": "applicant", "url": "https://www.gov.uk/government/publications/visa-regulations-revised-table" }
+          ]
+        },
+        {
+          "id": "indefinite-leave-to-remain",
+          "name": "Indefinite leave to remain",
+          "summary": "Preparing and submitting a settlement application.",
+          "fee": { "type": "fixed", "amount": null },
+          "confirmed": false,
+          "questions": [
+            { "id": "applicants", "type": "count", "label": "How many people are applying?", "min": 1, "max": 8, "default": 1, "included": 1, "feeEach": null, "feeLabel": "Additional applicants" }
+          ],
+          "thirdParty": [
+            { "label": "Home Office application fee", "amount": null, "per": "applicant", "url": "https://www.gov.uk/government/publications/visa-regulations-revised-table" }
+          ]
+        },
+        {
+          "id": "british-citizenship",
+          "name": "British citizenship",
+          "summary": "Preparing and submitting a naturalisation or registration application.",
+          "fee": { "type": "fixed", "amount": null },
+          "confirmed": false,
+          "questions": [
+            { "id": "applicant", "type": "select", "label": "Is the application for an adult or a child?", "options": [ { "value": "adult", "label": "Adult", "fee": { "type": "fixed", "amount": null } }, { "value": "child", "label": "Child", "fee": { "type": "fixed", "amount": null } } ] }
+          ],
+          "thirdParty": [
+            { "label": "Home Office application fee", "amount": null, "url": "https://www.gov.uk/government/publications/visa-regulations-revised-table" }
+          ]
+        },
+        {
+          "id": "sponsor-licence",
+          "name": "Sponsor licence application",
+          "summary": "Applying for a licence to sponsor workers.",
+          "fee": { "type": "fixed", "amount": null },
+          "confirmed": false,
+          "questions": [
+            { "id": "routes", "type": "count", "label": "How many sponsorship routes are you applying for?", "min": 1, "max": 6, "default": 1, "included": 1, "feeEach": null, "feeLabel": "Additional routes" },
+            { "id": "audit", "type": "toggle", "label": "Add a compliance audit", "fee": null, "feeLabel": "Compliance audit" }
+          ],
+          "thirdParty": [
+            { "label": "Home Office sponsor licence fee", "amount": null, "url": "https://www.gov.uk/government/publications/visa-regulations-revised-table" }
+          ]
+        },
+        {
+          "id": "appeal-review",
+          "name": "Administrative review or appeal",
+          "summary": "Challenging a refusal by administrative review or a First-tier Tribunal appeal.",
+          "fee": { "type": "fixed", "amount": null },
+          "confirmed": false,
+          "questions": [
+            { "id": "route", "type": "select", "label": "Which route applies?", "options": [
+              { "value": "admin-review", "label": "Administrative review", "fee": { "type": "fixed", "amount": null }, "thirdParty": [ { "label": "Home Office administrative review fee", "amount": null, "url": "https://www.gov.uk/government/publications/visa-regulations-revised-table" } ] },
+              { "value": "tribunal-appeal", "label": "First-tier Tribunal appeal", "fee": { "type": "range", "from": null, "to": null }, "thirdParty": [ { "label": "Tribunal appeal fee", "amount": null, "url": "https://www.gov.uk/immigration-asylum-tribunal" } ] }
+            ] },
+            { "id": "hearing", "type": "toggle", "label": "Representation at a hearing", "fee": null, "feeLabel": "Hearing attendance", "showWhen": { "route": "tribunal-appeal" } }
+          ],
+          "thirdParty": []
+        }
+      ]
+    },
+    {
+      "id": "licensing-regulatory",
+      "name": "Licensing and Regulatory",
+      "page": "/services/licensing-regulatory/",
+      "services": [
+        {
+          "id": "premises-licence",
+          "name": "Premises licence",
+          "summary": "A new premises licence application or a variation.",
+          "fee": { "type": "fixed", "amount": null },
+          "confirmed": false,
+          "questions": [
+            { "id": "type", "type": "select", "label": "Is this a new licence or a variation?", "options": [ { "value": "new", "label": "New premises licence", "fee": { "type": "fixed", "amount": null } }, { "value": "variation", "label": "Variation", "fee": { "type": "fixed", "amount": null } } ] },
+            { "id": "hearing", "type": "toggle", "label": "Attendance at a licensing hearing", "fee": null, "feeLabel": "Hearing attendance" }
+          ],
+          "thirdParty": [
+            { "label": "Application fee payable to the licensing authority", "amount": null, "url": null }
+          ]
+        },
+        {
+          "id": "taxi-private-hire",
+          "name": "Taxi and private hire",
+          "summary": "Driver, vehicle and operator licence matters.",
+          "fee": { "type": "fixed", "amount": null },
+          "confirmed": false,
+          "questions": [
+            { "id": "matter", "type": "select", "label": "What do you need help with?", "options": [ { "value": "application", "label": "An application", "fee": { "type": "fixed", "amount": null } }, { "value": "appeal", "label": "An appeal", "fee": { "type": "fixed", "amount": null } }, { "value": "review", "label": "A review, suspension or revocation", "fee": { "type": "fixed", "amount": null } } ] }
+          ],
+          "thirdParty": [
+            { "label": "Council or court fees, where they apply", "amount": null, "url": null }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "technology-data-ai-governance",
+      "name": "Technology, Data and AI Governance",
+      "page": "/services/technology-data-ai-governance/",
+      "services": [
+        {
+          "id": "fixed-scope",
+          "name": "Fixed-scope services",
+          "summary": "One-off data protection and AI governance work at a fixed fee.",
+          "fee": { "type": "fixed", "amount": null },
+          "confirmed": false,
+          "questions": [
+            { "id": "service", "type": "select", "label": "Which service do you need?", "options": [
+              { "value": "health-check", "label": "Data protection health check", "fee": { "type": "fixed", "amount": 0 } },
+              { "value": "ask-an-expert", "label": "Ask an expert", "fee": { "type": "fixed", "amount": 150 } },
+              { "value": "dpia", "label": "DPIA or AI impact assessment", "fee": { "type": "fixed", "amount": 1500 } },
+              { "value": "gap-assessment", "label": "Gap assessment", "fee": { "type": "fixed", "amount": 3500 } },
+              { "value": "ai-readiness", "label": "AI governance readiness", "fee": { "type": "from", "amount": 5000 } }
+            ] }
+          ],
+          "thirdParty": []
+        },
+        {
+          "id": "dpo-retainer",
+          "name": "Fractional DPO retainer",
+          "summary": "A named Data Protection Officer for a set number of hours each month.",
+          "period": "month",
+          "fee": { "type": "fixed", "amount": null },
+          "confirmed": false,
+          "questions": [
+            { "id": "plan", "type": "select", "label": "Which plan?", "options": [
+              { "value": "essentials", "label": "Essentials · 5 hours a month", "fee": { "type": "fixed", "amount": 900 } },
+              { "value": "core", "label": "Core · 10 hours a month", "fee": { "type": "fixed", "amount": 1750 } },
+              { "value": "dpo-ai", "label": "DPO + AI Governance · 15 hours a month", "fee": { "type": "fixed", "amount": 2500 } },
+              { "value": "enterprise", "label": "Enterprise · 20 hours a month", "fee": { "type": "fixed", "amount": 3250 } },
+              { "value": "bespoke", "label": "Bespoke · 30+ hours a month", "fee": { "type": "quote" } }
+            ] }
+          ],
+          "thirdParty": []
+        }
+      ]
+    },
+    {
+      "id": "consultation",
+      "name": "Initial consultation",
+      "page": "/book-consultation/",
+      "services": [
+        {
+          "id": "initial-consultation",
+          "name": "Initial consultation",
+          "summary": "A first meeting to understand your matter and explain your options.",
+          "fee": { "type": "fixed", "amount": null },
+          "confirmed": false,
+          "questions": [
+            { "id": "method", "type": "select", "label": "How would you like to meet?", "options": [ { "value": "phone", "label": "Phone" }, { "value": "video", "label": "Video call" }, { "value": "in-person", "label": "In person" } ] }
+          ],
+          "thirdParty": []
+        }
+      ]
+    }
+  ],
+  "quotedAreas": [
+    { "id": "family-law", "name": "Family Law", "page": "/services/family-law/" },
+    { "id": "criminal-defence", "name": "Criminal Defence", "page": "/services/criminal-defence/" },
+    { "id": "property-housing", "name": "Property and Housing", "page": "/services/property-housing/" }
+  ],
+  "dpoPlans": [
+    { "name": "Essentials", "hours": "5", "includes": "DPO appointment and registration; advisory line; quarterly check-in; annual DPO report", "amount": 900, "confirmed": false },
+    { "name": "Core", "hours": "10", "includes": "Essentials plus monthly check-ins, DSAR and complaint triage, policy refresh, vendor DPA reviews, quarterly board report", "amount": 1750, "confirmed": false },
+    { "name": "DPO + AI Governance", "hours": "15", "includes": "Core plus AI governance lead role, AI system inventory, one DPIA or AI impact assessment a quarter, horizon scanning", "amount": 2500, "confirmed": false, "featured": true },
+    { "name": "Enterprise", "hours": "20", "includes": "All of the above plus fortnightly calls, governance committee, on-call breach response, staff training, audit support", "amount": 3250, "confirmed": false },
+    { "name": "Bespoke", "hours": "30+", "includes": "Larger groups, or interim cover for an in-house DPO", "amount": "quote", "confirmed": false }
+  ]
+}
